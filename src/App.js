@@ -1,3 +1,7 @@
+// html, css, js = 예전 방식
+// SPA = 요즘 방식
+// Single Page Application = react, vue, angular
+
 import logo from './logo.svg';
 import './App.css';
 
