@@ -1,3 +1,6 @@
+
+// 테스트 url주소 : http://localhost:3000/info?detail=true&mode=1
+
 import React from "react";
 import { useSearchParams } from "react-router-dom";
 
@@ -5,7 +8,9 @@ const RouteInfo = () => {
 
     const [searchParams, setSearchParams] = useSearchParams();
     const detail = searchParams.get('detail');
+        console.log(detail);
     const mode = searchParams.get('mode');
+        console.log(mode);
 
     const onToggleDetail = () => {
         setSearchParams({mode, detail: detail === 'true' ? false : true});

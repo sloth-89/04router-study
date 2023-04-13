@@ -5,6 +5,8 @@
 // search : 맨 앞에 ? 문자를 포함한 쿼리스트링 값
 // state : 페이지로 이동할 때 임의로 넣을 수 있는 값
 
+// 테스트 url주소 : http://localhost:3000/about?detail=true&mode=1
+
 import React from "react";
 import { useLocation } from "react-router-dom";
 
