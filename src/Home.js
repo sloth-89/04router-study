@@ -22,6 +22,9 @@ const Home = () => {
                 <li>
                     <Link to="/profiles/void" style={{textDecoration: "none"}}>존재하지 않는 프로필</Link>
                 </li>
+                <li>
+                    <Link to="/boards" style={{textDecoration: "none"}}>게시글 목록</Link>
+                </li>
             </ul>
 
         </div>

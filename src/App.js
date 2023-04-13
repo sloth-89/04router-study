@@ -37,6 +37,10 @@ import Home from "./Home";
 import {Link, Route, Routes} from "react-router-dom";
 import Profile from "./Profile";
 import RouteInfo from "./RouteInfo";
+import Boards from "./Boards";
+import Board from "./Board";
+import Layout from "./Layout";
+import NotFound from "./NotFound";
 
 const App = () => {
   return (
@@ -49,17 +53,35 @@ const App = () => {
 
     // react-router-dom 6버전
     <div>
-      {/* 1. <Routes>를 활용하여 url 경로와 렌더링 해줄 컴포넌트를 연결. */}
+        {/* 1. <Routes>를 활용하여 url 경로와 렌더링 해줄 컴포넌트를 연결. */}
       <Routes>
-        <Route path="/" element={<Home/>}/> {/* /을 입력하면 localhost:3000과 같다. */}
-        <Route path="/about" element={<About/>}/>
-        <Route path="/profiles/:username" element={<Profile/>}/>
-        <Route path="/info" element={<RouteInfo/>}/>
+        <Route element={<Layout/>}>
+            {/* <Route path="/" element={<Home/>}/> */}
+            {/* "/"을 입력하면 localhost:3000과 같다. */}
+          <Route index element={<Home/>}/>
+            {/* index = 웹페이지의 메인, 맨 처음 경로를 뜻한다. */}
+
+          <Route path="/about" element={<About/>}/>
+          <Route path="/profiles/:username" element={<Profile/>}/>
+          <Route path="/info" element={<RouteInfo/>}/>
+         
+
+            {/* 게시글 방법 1 - 게시글 목록(Boards)과 게시글 상세내용(Board) 분리 */}
+            {/* <Route path="/boards" element={<Boards/>}/>
+            <Route path="/boards/:id" element={<Board/>}/> */}
+
+            {/* 게시글 방법 2 - 게시글 상세내용이라는 하위 컴포넌트 진입 시, 게시글목록 상위 컴포넌트가 보여지게 함 */}
+          <Route path="/boards" element={<Boards/>}>
+            <Route path=":id" element={<Board/>}/>
+          </Route>
+        </Route>
+        <Route path="*" element={<NotFound/>}/>
+        {/* * = 모든 값, 즉 / 다음 뭘 입력해도 모두 받는다. */}
       </Routes>
     
     <hr/> {/* 선 */}
 
-      {/* 2. a태그와 Link 비교: 새로고침 유무 */}
+        {/* 2. a태그와 Link 비교: 새로고침 유무 */}
       <a href="/about" style={{textDecoration: "none", paddingLeft: "5px"}}>이동(페이지 자체가 새로고침 된다.)</a>
       
     <hr/>
