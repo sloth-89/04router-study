@@ -17,7 +17,17 @@ const RouteInfo = () => {
     }
 
     const onIncreaseMode = () => {
+        // 타입 테스트!! - 방법 : mode +1의 버튼 클릭 시 함수코드가 시작
+        console.log(typeof(1)) // number
+        console.log(typeof("1")) // string
+        console.log(typeof(1+"1"))  // string 
+        console.log(1+"1") // 11
+        console.log(1+1)
+        console.log(mode) // mode의 값
+        console.log(typeof(mode)) // string
+
         const nextMode = mode === null ? 1 : parseInt(mode) +1;
+        // parseInt는 문자타입을 숫자타입으로 인식하게 하여 처리.
         setSearchParams({mode: nextMode, detail});
     }
 
