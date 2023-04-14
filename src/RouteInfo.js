@@ -26,8 +26,10 @@ const RouteInfo = () => {
         console.log(mode) // mode의 값
         console.log(typeof(mode)) // string
 
+        // const nextMode = mode === null ? 1: mode +1;
+        // 이렇게 작성하면 String 문자열로 인식하기 때문에 글자로 추가된다.
         const nextMode = mode === null ? 1 : parseInt(mode) +1;
-        // parseInt는 문자타입을 숫자타입으로 인식하게 하여 처리.
+        // parseInt는 문자타입을 숫자타입으로 인식하게 하여 숫자가 늘어난다.
         setSearchParams({mode: nextMode, detail});
     }
 

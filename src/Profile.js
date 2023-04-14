@@ -29,6 +29,7 @@ const Profile = () => {
             <h1>User profile</h1>
 
                 {/* 파라미터(여기서는 웹페이지 이름)를 입력 시 배열을 참조하여 참 거짓을 판단. */}
+                {/* 테스트 : http://localhost:3000/profiles/abcd */}
             {profile?(
                 <div>
                     <h2>{profile.name}</h2>
