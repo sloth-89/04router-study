@@ -29,7 +29,8 @@
 // : /about?details=true
 // 사용하는 이유. 처리해야할 내용이 많을 때 조건을 걸어 처리할 수 있게 한다.
 
-
+// useNavigate = 어떠한 조건이 만족했을 때 이동할 수 있도록 하는 것
+// Link = a태그처럼 클릭 시 이동
 
 import React from "react";
 import About from "./About";
