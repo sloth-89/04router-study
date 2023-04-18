@@ -53,3 +53,5 @@ const Boards = () => {
 }
 
 export default Boards;
+
+// isActive란 acvtive하는 때를 의미
