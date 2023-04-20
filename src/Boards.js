@@ -1,4 +1,5 @@
 // 새 페이지로 이동하는 방법 1 : <Link to="">
+// 그냥 페이지 출력
 // import React from "react";
 // import { Link, Outlet } from "react-router-dom";
 
@@ -24,7 +25,8 @@
 
 // export default Boards;
 
-// 새 페이지로 이동하는 방법 2 : NavLink
+// 새 페이지로 이동하는 방법 2 : <NavLink to="">
+// 스타일까지 추가 가능
 import { NavLink, Outlet } from "react-router-dom";
 
 const Boards = () => {
